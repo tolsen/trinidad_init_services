@@ -43,6 +43,10 @@ MAIN_CLASS=com.msp.jsvc.JRubyDaemon
 
 CLASSPATH=<%= @classpath.join(":") %>
 
+if [ ! -z "$TRINIDAD_EXTRA_CLASSPATH" ]; then
+    CLASSPATH=${CLASSPATH}:${TRINIDAD_EXTRA_CLASSPATH}
+fi
+
 JRUBY_SHELL=/bin/sh
 
 JRUBY_NATIVE_PATH=""
